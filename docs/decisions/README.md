@@ -10,6 +10,9 @@ Why things are the way they are. One file per decision. Never edited after accep
 | [004](ADR-004-rules-view-split.md) | Battle rules separate from visuals, joined by an event log | Accepted | 2026-10-05 |
 | [005](ADR-005-four-starting-lanes.md) | Start with four lanes; split only when it hurts | Accepted | 2026-10-05 |
 | [006](ADR-006-laws-with-teeth.md) | FFTA-style laws with real punishments | Accepted | 2026-10-05 |
+| [007](ADR-007-hackberry-dev-machine.md) | The Hackberry is the development machine as well as the target | Accepted | 2026-10-05 |
+| [008](ADR-008-code-standards-and-module-map.md) | Strict code standards and a module map before any code | Accepted | 2026-10-05 |
+| [009](ADR-009-pair-mode.md) | Pair mode, where the Director writes some of the code | Accepted | 2026-10-05 |
 
 ## Template
 

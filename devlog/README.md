@@ -46,7 +46,7 @@ devlog/
 | What | Tool | Notes |
 |---|---|---|
 | In-game screenshot | Capture key (M0-T02) | Saves a PNG stamped with date, commit and battle seed, so any picture can be reproduced |
-| Clean gameplay video | Godot Movie Maker mode (`--write-movie`) on the dev machine | Renders every frame at a fixed rate, not in real time, so the video is perfectly smooth whatever the hardware |
+| Clean gameplay video | Godot Movie Maker mode (`--write-movie`) on the Hackberry | Renders every frame at a fixed rate, not in real time, so the video is perfectly smooth even though the device is slow |
 | Quick on-device video | `wf-recorder` on the Hackberry | Works with Pi OS's Wayland desktop. The Pi 5 chip has no hardware H.264 encoder, so recording costs CPU and lowers FPS. Never record during a perf measurement |
 | "It runs on the Hackberry" | Your phone, filming the device in hand | Often the most honest and nicest-looking shot |
 | Agents at work | `asciinema` | Records terminal sessions as small text files that replay in a browser |

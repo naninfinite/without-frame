@@ -16,6 +16,10 @@ Hard rules for any agent that writes to this repo. New rules come from incident 
 12. Write British English everywhere (`AGENTS.md` § Project rules, rule 1).
 13. Never write the owner's real name anywhere. Use "naninfinite" or "the Director".
 14. Commit as `naninfinite` with the GitHub noreply address. Claude's `Co-Authored-By` trailer is fine; session links are not.
+15. Read `CODE-STANDARDS.md` and `MODULE-MAP.md` before touching code. Write only classes in the accepted module map.
+16. Never add a class, autoload, folder or addon on your own. Propose a module map change and stop.
+17. Search the codebase before writing a function. Duplicated code is never acceptable.
+18. Check the task's mode. In a `pair` task, never create or edit code files; guide and review instead.
 
 ## Rules added from incidents
 

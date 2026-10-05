@@ -58,6 +58,20 @@ stateDiagram-v2
     Facing --> [*]: CT -= 100 / 80 / 60
 ```
 
+## Development environment
+
+The Hackberry is both the development machine and the target (ADR-007).
+
+| | |
+|---|---|
+| Machine | HackberryPi CM5, Linux ARM64. A Mac may join later. |
+| Everything runs here | Godot editor, agent command-line tools, Godot MCP bridge, tests, the game |
+| Power and heat | Work plugged in. Long sessions will throttle on the passive heatsink; a small fan helps. |
+| Screen | Prefer terminal and agent workflows. For editor sessions use HDMI to a monitor, or raise the editor's display scale. |
+| Storage | NVMe strongly preferred over an SD card |
+| Measuring performance | Close the editor and stop all agents first, or the numbers are meaningless |
+| Tools | Every tool must run on Linux ARM64. Check before adopting one. |
+
 ## Rendering
 
 | Setting | Value | Why |
@@ -89,30 +103,39 @@ stateDiagram-v2
 | `assets/` | `art` | Sprites, textures, UI art, audio |
 | `tests/rules/` | `mech` writes, `qa` reviews | Rules tests, including every worked example |
 | `tests/integration/` | `qa` | Scene and end-to-end tests |
-| `tools/` | `env` (Tools later) | Scripts, checkers, deploy |
+| `tools/` | `env` (Tools later) | Scripts, checkers, run helpers |
 | `.github/` | `env` | CI workflows |
 | `docs/`, `devlog/` | Director | Lanes edit only their own lane doc, handoffs, reports and changelog lines |
 
 ## Rules for all code
 
+The full rules are in `CODE-STANDARDS.md` (ADR-008), and every class is listed in `MODULE-MAP.md` before it is written. The short version:
+
+- Typed, object-oriented GDScript: one class per file, one responsibility per class.
+- Hard size limits on files, functions and changes; no duplicated code.
 - **Strings:** all on-screen text goes through string tables. No literal UI text in code.
 - **Randomness:** only through the battle's seeded random number generator in `game/rules/`.
 - **Numbers:** in `data/`, never hard-coded.
-- **Engine version:** pinned in M0-T01. Godot 4.6.2 is reported running well on a Pi 5; 4.7.x also exists. Check the current stable release and Pi reports before pinning.
+- **Engine version:** pinned in M0-T01. The latest stable is 4.7.2; 4.6.2 is reported running well on a Pi 5. Confirm 4.7.2 on the Hackberry, and fall back to 4.6.x if it misbehaves.
 
-## Testing
+## Testing and checks
 
 - GdUnit4, run headless locally and in a GitHub Action on every pull request (M0-T03).
 - Every worked example in `docs/design/` becomes a test with the same numbers.
+- `gdlint` (from gdtoolkit) with the limits in `CODE-STANDARDS.md`, and `gdformat` for formatting.
+- `jscpd` duplicate detection over `game/`. Any duplicated block fails the check.
 - Later: mutation testing (gdmutant) to check the tests actually catch bugs.
 
 ## Tooling
 
-Filled in by M0-T05. Candidates, all to be read before installing and pinned to a version:
+Installed and pinned in M0-T05. Read each before installing, project scope only, Linux ARM64 only.
 
 | Tool | Purpose |
 |---|---|
 | godot-mcp (slangwald) | Claude Code ↔ Godot editor and running game, screenshots |
 | GDScript language server plugin (minami110 or twaananen) | Real errors for agents instead of guesses |
-| One skill pack: GodotPrompter or awesome-gamedev-agent-skills | Godot-specific agent knowledge |
-| pixel-art-mcp + Blender MCP | Sprite pipeline, pending SPIKE-02 |
+| Matt Pocock's skills (`mattpocock-skills`) | Grilling, teaching, design and review disciplines. Usage map in `AGENTS.md` § Skills |
+| One Godot skill pack: GodotPrompter or awesome-gamedev-agent-skills | Godot-specific agent knowledge. Optional; add only if agents keep getting Godot wrong |
+| gdtoolkit (`gdlint`, `gdformat`) | Lint and format |
+| jscpd | Duplicate detection |
+| pixel-art-mcp + Blender MCP | Sprite pipeline, pending SPIKE-02. pixel-art-mcp's container is x86-64 only (ADR-007) |

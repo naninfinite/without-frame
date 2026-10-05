@@ -28,6 +28,8 @@ Built on a spike branch (`env/SPIKE-01`), not merged.
 
 ## Measure, 10 minutes each, on the device
 
+Before each run: close the Godot editor, stop every agent and the MCP bridge, and run the exported or command-line build on its own (ADR-007). Note whether the device is plugged in.
+
 - Average FPS and 1% lows, frame time
 - Draw calls
 - SoC temperature at start and end (`vcgencmd measure_temp`) and throttle flags (`vcgencmd get_throttled`)
