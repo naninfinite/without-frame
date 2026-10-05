@@ -5,12 +5,31 @@ How work moves through this project. Short on purpose.
 ## The task loop
 
 1. **Idea.** Anything new goes into `PARKING-LOT.md`. Never straight into code.
-2. **Promote.** At milestone planning the Director promotes ideas into tasks in `ROADMAP.md`. Each task gets an ID (`M1-T04`), an owning lane, a spec reference and acceptance criteria.
-3. **Spec first.** If the task changes a mechanic, contract or architecture, the design doc and a decision record are updated before any code.
-4. **Build.** One lane writes, on its own branch and worktree.
-5. **Review.** A model from a different family reviews the diff. Judges run the checks.
+2. **Promote.** At milestone planning the Director promotes ideas into tasks in `ROADMAP.md`. Each task gets an ID (`M1-T04`), an owning lane, a mode (below), a spec reference and acceptance criteria.
+3. **Spec and map first.** If the task changes a mechanic, contract or architecture, the design doc and a decision record are updated before any code. If it needs a new class, `MODULE-MAP.md` is updated and accepted first.
+4. **Build.** One lane writes (or the Director, in a pair task), on its own branch and worktree.
+5. **Review.** A model from a different family reviews the diff against `CODE-STANDARDS.md` § 9. Judges run the checks.
 6. **Playtest.** The Director plays it on the Hackberry.
 7. **Merge.** Then: changelog line, lane § Now updated, task ticked in `ROADMAP.md`.
+
+## Task modes
+
+| Mode | Who writes the code | The agent's role |
+|---|---|---|
+| `agent` | An agent in the owning lane | Writes, tests, reports |
+| `pair` | The Director, by hand, to learn and for fun | Guides, explains, reviews, runs checks. Never edits code files (`AGENTS.md` § Pair mode) |
+| `director` | No game code | Decisions, docs, spikes |
+
+Good pair tasks are small, central and educational, e.g. the rules core skeleton or the charge-time clock. The Director can switch a task's mode at any time by updating `ROADMAP.md`.
+
+Pair tasks still follow every rule in `CODE-STANDARDS.md`, go through review, and get a task report (written by the agent from the session).
+
+## Opening a pull request
+
+1. Push the branch: `git push -u origin <branch>`.
+2. `gh pr create --fill`, or open it on GitHub. The description says what changed, which spec sections it implements, and the task ID.
+3. Wait for checks (once M0-T03 and M0-T06 exist) and the cross-family review.
+4. `gh pr merge --squash --delete-branch`, then `git switch main && git pull`.
 
 ## Branches and worktrees
 

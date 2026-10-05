@@ -8,7 +8,7 @@ Can MCP-driven tools produce sprites that are consistent across every frame and 
 
 ## Tools
 
-- **pixel-art-mcp** (NNTin): Blender model → consistent views from set angles → transparent pixel sprites on a palette → packed sheet with metadata. Its container targets Linux x86-64, so it runs on the dev machine, not the Hackberry.
+- **pixel-art-mcp** (NNTin): Blender model → consistent views from set angles → transparent pixel sprites on a palette → packed sheet with metadata. Its container targets Linux x86-64, and the Hackberry is ARM64 (ADR-007). First step of the spike: check whether its converter runs natively on ARM64 outside the container with Blender from `apt`. If not, run it on an x86-64 machine (a cloud machine, or a Mac with x86 emulation if one joins later).
 - **Blender MCP** (ahujasid, now "mcp-for-blender"): general modelling. By default it lets the agent run any Python inside Blender, so use it in a dedicated Blender project.
 
 Before installing either: read the code and setup, pin the version, install at project scope only.

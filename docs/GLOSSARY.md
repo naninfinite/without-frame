@@ -44,4 +44,6 @@ One meaning per term. If a doc uses a term differently, the doc is wrong.
 | **Contract** | A format two or more lanes build to, in `docs/contracts/`. |
 | **ADR** | Architecture/design decision record, in `docs/decisions/`. |
 | **Spike** | A short, timeboxed experiment to test a risky assumption. |
+| **Module map** | The list of every class, its responsibility and allowed dependencies, agreed before code (`MODULE-MAP.md`). |
+| **Task mode** | Who writes a task's code: `agent`, `pair` (the Director, with an agent guiding) or `director` (no code). |
 | **Parking lot** | Where ideas wait until a milestone planning session. |

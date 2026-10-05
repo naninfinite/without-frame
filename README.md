@@ -5,7 +5,7 @@ A tactics RPG in the vein of Final Fantasy Tactics, FFTA and Fire Emblem, built 
 - **Look:** FFT-style 2D sprites on 3D block terrain, camera rotation in 90° steps
 - **Turns:** FFT charge time (CT), individual unit turns, charged spells
 - **Hook:** FFTA-style laws with real punishments: yellow and red cards, jail
-- **Built by:** naninfinite (Director) with a multi-agent team working in lanes
+- **Built by:** naninfinite (Director) with a multi-agent team working in lanes, on the Hackberry itself. Some code is written by hand in pair mode.
 
 ## Where things live
 
@@ -14,7 +14,9 @@ A tactics RPG in the vein of Final Fantasy Tactics, FFTA and Fire Emblem, built 
 | `AGENTS.md` | Rules and read order for every agent. Start here. |
 | `docs/VISION.md` | Pillars and what the game is not |
 | `docs/MISSION-CONTROL.md` | Current milestone, every lane's status, what's waiting on whom |
-| `docs/ROADMAP.md` | Milestones and their definitions of done |
+| `docs/ROADMAP.md` | Milestones, tasks, modes and definitions of done |
+| `docs/CODE-STANDARDS.md` | How code must be written: OOP, typing, size limits, no duplication |
+| `docs/MODULE-MAP.md` | Every class, agreed before it is written |
 | `docs/design/` | Current rules for each game system |
 | `docs/contracts/` | Formats that lanes build to (event log, maps, sprites) |
 | `docs/decisions/` | Decision records (ADRs): why things are the way they are |

@@ -16,7 +16,7 @@ Make the battle visible, playable and fast on the Hackberry: terrain, camera, sp
 
 ## Read for this lane
 
-`TECH.md` (all), `contracts/event-log.md`, `contracts/map-format.md`, `contracts/sprite-spec.md`, ADR-001, ADR-004, `spikes/SPIKE-01-device-performance.md`.
+`TECH.md` (all), `CODE-STANDARDS.md`, `MODULE-MAP.md`, `contracts/event-log.md`, `contracts/map-format.md`, `contracts/sprite-spec.md`, ADR-001, ADR-004, ADR-007, ADR-008, `spikes/SPIKE-01-device-performance.md`.
 
 ## § Now
 
@@ -28,8 +28,8 @@ Nothing. M0-T01 can start.
 
 ## Next tasks
 
-- M0-T01: Godot project init (pinned version, Mobile renderer, 360×360 viewport scaled 2×, folder layout).
-- M0-T02: device loop (ARM64 export, one-command deploy, perf overlay and logger).
+- M0-T01: Godot project init (pinned version, Mobile renderer, 360×360 viewport scaled 2×, folder layout, typed-GDScript warnings as errors).
+- M0-T02: local device loop (run command, perf overlay and logger, capture key).
 - SPIKE-01: device performance spike.
-- M0-T06: lane path check in CI.
+- M0-T06: repo guard checks in CI.
 - M0-T05 with the Director: agent tooling.

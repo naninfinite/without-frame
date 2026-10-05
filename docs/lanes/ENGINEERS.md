@@ -8,15 +8,15 @@ Build the battle rules as a pure, testable core that matches the design specs ex
 
 ## Owns (paths)
 
-`game/rules/`, `data/`, `tests/rules/`
+`game/rules/`, `data/`, `tests/rules/`. In `pair` tasks the Director writes code here and Engineers guide and review (ADR-009).
 
 ## Never touches
 
-`game/view/`, `game/input/`, `maps/`, `assets/`, `.github/`, design specs and contracts (request changes from the Director).
+`game/view/`, `game/input/`, `maps/`, `assets/`, `.github/`, design specs, contracts and the module map (request changes from the Director).
 
 ## Read for this lane
 
-`design/turn-system.md`, `design/laws.md`, `design/battle-basics.md`, `contracts/event-log.md`, `TECH.md` § Architecture and § Rules for all code, ADR-002, ADR-004, ADR-006.
+`CODE-STANDARDS.md`, `MODULE-MAP.md`, `design/turn-system.md`, `design/laws.md`, `design/battle-basics.md`, `contracts/event-log.md`, `TECH.md` § Architecture, ADR-002, ADR-004, ADR-006, ADR-008, ADR-009.
 
 ## § Now
 
@@ -24,9 +24,9 @@ Not started. Branch: none. Worktree: none.
 
 ## Waiting on
 
-M0-T01 (Godot project init by Geomancers).
+M0-T01 (Godot project init by Geomancers) and M0-T08 (module map accepted by the Director).
 
 ## Next tasks
 
-- M0-T04: rules core skeleton (battle state, command input, event log output) with one passing headless test.
+- M0-T04 (proposed `pair`): rules core skeleton exactly as the accepted module map, with one passing headless test. Engineers guide; the Director writes.
 - M1 (once planned): clock and turn costs first, then charged abilities, with worked examples A–C from `design/turn-system.md` as tests.

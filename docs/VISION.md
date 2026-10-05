@@ -27,3 +27,4 @@ Every feature must serve at least one pillar. If it serves none, it goes in `PAR
 | Input | BlackBerry keyboard, trackpad, touch |
 | Engine | Godot 4.x, Mobile renderer (exact version pinned in M0) |
 | Target | 30fps in battle, 3D rendered at 360×360 and scaled 2× |
+| Built on | The Hackberry itself (ADR-007) |
