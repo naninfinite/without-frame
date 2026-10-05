@@ -1,0 +1,21 @@
+# Godot 4
+.godot/
+*.translation
+export_presets.cfg.bak
+
+# Builds
+/build/
+/exports/
+*.x86_64
+*.arm64
+*.pck
+
+# Spike scratch
+/spikes-scratch/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
